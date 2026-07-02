@@ -1,0 +1,12 @@
+import{u as l}from"./useReveal-CJeZSSov.js";import{d as a,c as n,a as e,F as c,r as d,o as r,t as s,_ as u}from"./index-tw_5g6DR.js";const h={class:"section page-top"},g={class:"container"},k={class:"leistungen-grid"},p=["innerHTML"],f=a({__name:"LeistungenView",setup(v){l();const o=[{title:"UI/UX Design",text:"Nutzerorientierte Interfaces für Web und App. Von der Konzeption und Wireframes bis zum finalen, klickbaren Prototyp.",icon:`<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="14" cy="14" r="5" fill="currentColor" opacity="0.3"/>
+    </svg>`},{title:"Corporate Design",text:"Ganzheitliche visuelle Identitäten: Logo, Farbwelt, Typografie und Styleguide für einen konsistenten Markenauftritt.",icon:`<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect x="4" y="4" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M4 11h20M11 4v20" stroke="currentColor" stroke-width="1.5"/>
+    </svg>`},{title:"Grafikdesign",text:"Kreative Gestaltung für Social Media, Präsentationen, Infografiken und alle weiteren digitalen Formate.",icon:`<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M5 22L10 12l5 7 4-5 4 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`},{title:"Printwerbemittel",text:"Flyer, Broschüren, Plakate, Etiketten, Geschäftsdrucksachen – druckfertig und mit Liebe zum Detail.",icon:`<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect x="5" y="3" width="18" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M9 9h10M9 13h10M9 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`}];return(w,t)=>(r(),n("section",h,[t[1]||(t[1]=e("div",{class:"blob blob-3","aria-hidden":"true"},null,-1)),e("div",g,[t[0]||(t[0]=e("div",{class:"section-header center"},[e("span",{class:"eyebrow"},"Was ich anbiete"),e("h1",{class:"section-title"},"Leistungen"),e("p",{class:"section-sub"},"Ganzheitliche Gestaltung. Von der digitalen Oberfläche bis zum Druckprodukt.")],-1)),e("div",k,[(r(),n(c,null,d(o,i=>e("article",{key:i.title,class:"leistung-card reveal"},[e("div",{class:"leistung-icon-wrap",innerHTML:i.icon},null,8,p),e("h2",null,s(i.title),1),e("p",null,s(i.text),1)])),64))])])]))}}),b=u(f,[["__scopeId","data-v-7be8c8fe"]]);export{b as default};

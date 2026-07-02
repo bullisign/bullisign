@@ -1,0 +1,1 @@
+import{p as s,q as n}from"./index-tw_5g6DR.js";function a(){let e;s(()=>{e=new IntersectionObserver(t=>{t.forEach(o=>{o.isIntersecting&&(o.target.classList.add("visible"),e.unobserve(o.target))})},{threshold:.1}),document.querySelectorAll(".reveal").forEach(t=>e.observe(t))}),n(()=>e==null?void 0:e.disconnect())}export{a as u};
