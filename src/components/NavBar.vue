@@ -63,9 +63,9 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 .nav-logo {
   font-family: var(--f-display);
   font-size: var(--size-xl);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--c-basil);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
 }
 
 .nav-links {

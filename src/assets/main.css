@@ -1,4 +1,14 @@
 /* =============================================
+   FONTS – Fira Sans, lokal gehostet (DSGVO-konform, keine Verbindung zu Google)
+   Lizenz: SIL Open Font License, siehe assets/fonts/OFL.txt
+   ============================================= */
+@font-face { font-family: 'Fira Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('./fonts/fira-sans-light.woff') format('woff'); }
+@font-face { font-family: 'Fira Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('./fonts/fira-sans-regular.woff') format('woff'); }
+@font-face { font-family: 'Fira Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url('./fonts/fira-sans-italic.woff') format('woff'); }
+@font-face { font-family: 'Fira Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('./fonts/fira-sans-medium.woff') format('woff'); }
+@font-face { font-family: 'Fira Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('./fonts/fira-sans-semibold.woff') format('woff'); }
+
+/* =============================================
    TOKENS
    ============================================= */
 :root {
@@ -14,8 +24,8 @@
   --c-mid:        #7A7065;
   --c-border:     #DDD8D0;
 
-  --f-display: 'Playfair Display', Georgia, serif;
-  --f-body:    'Jost', system-ui, sans-serif;
+  --f-display: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-body:    'Fira Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --size-xs:  0.75rem;
   --size-sm:  0.875rem;
@@ -100,12 +110,13 @@ button { cursor: pointer; font: inherit; }
 .section-title {
   font-family: var(--f-display);
   font-size: var(--size-2xl);
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   line-height: 1.2;
   color: var(--c-basil);
   margin-bottom: 0.5rem;
 }
-.section-title em { font-style: italic; color: var(--c-thyme); }
+.section-title em { font-style: normal; color: var(--c-thyme); }
 .title-light { color: var(--c-linen); }
 .section-sub {
   font-size: var(--size-md);
@@ -116,6 +127,10 @@ button { cursor: pointer; font: inherit; }
   line-height: 1.65;
 }
 .section-header { margin-bottom: var(--space-lg); }
+
+/* Überschriften in Fira Sans: kräftiger, ohne Kursiv-Akzente */
+h1, h2, h3 { font-weight: 500; }
+h1 em, h2 em { font-style: normal; }
 
 /* =============================================
    BUTTONS

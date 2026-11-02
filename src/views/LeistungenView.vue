@@ -5,7 +5,7 @@
       <div class="section-header center">
         <span class="eyebrow">Was ich anbiete</span>
         <h1 class="section-title">Leistungen</h1>
-        <p class="section-sub">Ganzheitliche Gestaltung. Von der digitalen Oberfläche bis zum Druckprodukt.</p>
+        <p class="section-sub">Gestaltung aus einer Hand: von der Website über den Markenauftritt bis zum Druckprodukt.</p>
       </div>
 
       <div class="leistungen-grid">
@@ -25,8 +25,8 @@ useReveal()
 
 const leistungen = [
   {
-    title: 'UI/UX Design',
-    text: 'Nutzerorientierte Interfaces für Web und App. Von der Konzeption und Wireframes bis zum finalen, klickbaren Prototyp.',
+    title: 'Websites & UX/UI Design',
+    text: 'Websites und digitale Oberflächen, die Besucher*innen einfach zum Ziel führen: von Struktur, Wireframes und klickbarem Prototyp bis zur fertigen, responsiven Umsetzung in WordPress, HTML und CSS. Auf Wunsch mit Online-Buchung und SEO-Grundlagen.',
     icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
       <circle cx="14" cy="14" r="5" fill="currentColor" opacity="0.3"/>
@@ -34,15 +34,15 @@ const leistungen = [
   },
   {
     title: 'Corporate Design',
-    text: 'Ganzheitliche visuelle Identitäten: Logo, Farbwelt, Typografie und Styleguide für einen konsistenten Markenauftritt.',
+    text: 'Ganzheitliche visuelle Identitäten: Logo, Farbwelt, Typografie und Styleguide für einen konsistenten Markenauftritt, digital und im Druck.',
     icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <rect x="4" y="4" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
       <path d="M4 11h20M11 4v20" stroke="currentColor" stroke-width="1.5"/>
     </svg>`
   },
   {
-    title: 'Grafikdesign',
-    text: 'Kreative Gestaltung für Social Media, Präsentationen, Infografiken und alle weiteren digitalen Formate.',
+    title: 'Grafik & Social Media',
+    text: 'Social-Media-Content, Präsentationen, Infografiken, Newsletter und Landingpages, passend zu deiner Marke.',
     icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <path d="M5 22L10 12l5 7 4-5 4 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>`
@@ -88,7 +88,7 @@ const leistungen = [
 .leistung-card h2 {
   font-family: var(--f-display);
   font-size: var(--size-xl);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--c-basil);
   margin-bottom: 0.5rem;
 }

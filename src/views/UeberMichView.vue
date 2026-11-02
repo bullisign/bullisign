@@ -12,20 +12,22 @@
         <span class="eyebrow">Wer steckt dahinter</span>
         <h1 class="section-title">Hallo, ich bin<br /><em>Jasmin</em></h1>
         <p class="about-lead">
-          Ich gestalte mit Haltung – und einem echten Interesse an den Menschen
+          Ich gestalte vom Problem her und mit echtem Interesse an den Menschen
           und Projekten, mit denen ich arbeite.
         </p>
         <p class="about-body">
-          Mit über 10 Jahren Erfahrung in Mediengestaltung, Print und UI/UX-Design
-          begleite ich Unternehmen und Selbstständige von der ersten Idee bis zur
-          fertigen Umsetzung. Mein Hintergrund liegt ursprünglich im Print – das
-          bedeutet, ich denke von Anfang an in beiden Welten und bringe zusammen,
-          was viele trennen.
+          Ich bin gelernte Mediengestalterin Digital und Print, habe mich zur Visuellen Designerin
+          weitergebildet und Informationsmanagement und Unternehmenskommunikation mit Schwerpunkt
+          User Experience an der Hochschule Neu-Ulm studiert. Seit 2014 gestalte ich Print- und
+          Digitalmedien, Websites und digitale Oberflächen, zum Beispiel den Onlineshop der
+          Kosmetikmarke ELA oder in meiner Bachelorarbeit die komplette Oberfläche einer Software
+          für industrielle Bildverarbeitung.
         </p>
         <p class="about-body">
-          Meine Basis ist in der Region Kirchheim unter Teck – ich arbeite remote
-          mit Kund·innen in ganz Deutschland. Ich nehme bewusst eine überschaubare
-          Anzahl an Projekten an, um jedem die Aufmerksamkeit zu geben, die es verdient.
+          Weil ich aus dem Print komme und Websites auch selbst umsetze, denke ich von Anfang an in
+          beiden Welten: Konzept, Gestaltung und Technik aus einer Hand. Meine Basis ist Dettingen unter
+          Teck in der Region Stuttgart, ich arbeite vor Ort und remote. Ich nehme bewusst eine
+          überschaubare Anzahl an Projekten an, um jedem die Aufmerksamkeit zu geben, die es verdient.
         </p>
 
         <div class="skills-row">
@@ -43,7 +45,7 @@ import { useReveal } from '@/composables/useReveal'
 import jasminImg from '@/assets/jasmin.png'
 useReveal()
 
-const skills = ['Figma', 'Adobe XD', 'Photoshop', 'InDesign', 'Illustrator', 'HTML/CSS', 'WordPress', 'Social Media']
+const skills = ['Figma', 'Adobe XD', 'Photoshop', 'InDesign', 'Illustrator', 'HTML/CSS', 'JavaScript', 'WordPress', 'Webflow', 'Google Analytics', 'Social Media']
 </script>
 
 <style scoped>
@@ -66,7 +68,7 @@ const skills = ['Figma', 'Adobe XD', 'Photoshop', 'InDesign', 'Illustrator', 'HT
 .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .about-lead {
   font-family: var(--f-display); font-size: var(--size-xl);
-  font-style: italic; color: var(--c-basil);
+  font-weight: 400; color: var(--c-basil);
   margin: 0.5rem 0 1rem; line-height: 1.5;
 }
 .about-body { font-size: var(--size-sm); font-weight: 300; color: var(--c-mid); line-height: 1.75; margin-bottom: 1rem; }

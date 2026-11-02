@@ -3,7 +3,12 @@ import HomeView from '@/views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
-  scrollBehavior: () => ({ top: 0 }),
+  scrollBehavior(to, from, saved) {
+    if (saved) return saved
+    if (to.path === from.path) return false
+    if (to.hash) return { el: to.hash, top: 96 }
+    return { top: 0 }
+  },
   routes: [
     { path: '/',              name: 'home',        component: HomeView },
     { path: '/leistungen',   name: 'leistungen',  component: () => import('@/views/LeistungenView.vue') },

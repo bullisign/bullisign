@@ -28,11 +28,10 @@
           Die Daten werden nach Abschluss der Anfrage, spätestens nach 12 Monaten, gelöscht.
         </p>
 
-        <h2>4. Google Fonts</h2>
+        <h2>4. Schriftarten</h2>
         <p>
-          Diese Website lädt Schriftarten von Google Fonts (Google LLC, USA). Dabei wird deine IP-Adresse
-          an Google übertragen (Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse).
-          Weitere Infos: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+          Die auf dieser Website verwendete Schriftart (Fira Sans) ist lokal eingebunden. Beim Aufruf der
+          Seite wird keine Verbindung zu Servern von Google oder anderen Anbietern aufgebaut.
         </p>
 
         <h2>5. Keine Cookies, kein Tracking</h2>
