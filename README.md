@@ -6,6 +6,16 @@ Persönliche Portfolio-Website von Jasmin Bullinger – UI/UX-Designerin & Medie
 
 ---
 
+## Website lokal ansehen
+
+Die `index.html` lässt sich **nicht** per Doppelklick im Browser öffnen – das ist ein Vite-Projekt und braucht einen kleinen lokalen Server.
+
+**Einfachster Weg:** Doppelklick auf `Website ansehen (Mac).command` bzw. `Website ansehen (Windows).bat`.
+Beim ersten Mal wird automatisch `npm install` ausgeführt, danach öffnet sich die Seite unter http://localhost:5173.
+Voraussetzung: [Node.js](https://nodejs.org) (LTS) ist installiert.
+
+---
+
 ## Setup
 
 ```bash
