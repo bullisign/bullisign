@@ -1,266 +1,158 @@
 <template>
+  <!-- HERO -->
   <section class="hero">
-    <div class="blob blob-1" aria-hidden="true"></div>
-    <div class="blob blob-2" aria-hidden="true"></div>
-
-    <div class="hero-inner container">
+    <BlobShape class="shape hero-shape" fill="var(--c-duck)" />
+    <div class="wrap hero-inner">
       <div class="hero-text">
-        <span class="eyebrow">Websites · UX/UI Design · Corporate Design</span>
-        <h1 class="hero-headline">
-          Gestaltung,<br />
-          <em>die deine Marke</em><br />
-          unverwechselbar macht.
-        </h1>
-        <p class="hero-sub">
-          Ich gestalte Websites, digitale Oberflächen und Markenauftritte vom Problem her und setze sie
-          auch selbst um: von der ersten Idee über Struktur und Design bis zur fertigen Website oder
-          zum Druckprodukt. Aus Dettingen unter Teck, für die Region Stuttgart und remote.
+        <p class="eyebrow"><BlobShape class="dot" />UX/UI- &amp; Markendesign · Dettingen unter Teck</p>
+        <h1 class="h1">Gestaltung,<br />die deine Marke<br />unverwechselbar macht.</h1>
+        <p class="lead hero-lead">
+          Ich bin Jasmin Bullinger, UX/UI- und Markendesignerin. Ich gestalte Websites, digitale Oberflächen
+          und Markenauftritte vom Problem her und setze sie auch selbst um, von der ersten Struktur bis zur
+          fertigen Website oder zum Druckprodukt.
         </p>
-        <div class="hero-actions">
-          <RouterLink to="/kontakt" class="btn-primary">Projekt anfragen</RouterLink>
-          <RouterLink to="/portfolio" class="btn-ghost">Meine Arbeiten</RouterLink>
+        <div class="btn-row">
+          <RouterLink to="/portfolio" class="btn btn-dark">Portfolio ansehen <span aria-hidden="true">→</span></RouterLink>
+          <RouterLink to="/kontakt" class="btn btn-line">Lass uns reden</RouterLink>
         </div>
+        <p class="job-note"><span class="job-dot" aria-hidden="true"></span><span>Offen für Projekte und für eine <RouterLink to="/ueber-mich#arbeitgeber">feste Stelle im UX/UI-Team</RouterLink>.</span></p>
       </div>
-
-      <div class="hero-image-wrap">
-        <div class="hero-image-blob" aria-hidden="true"></div>
-        <div class="hero-photo">
-          <img :src="jasminImg" alt="Jasmin Bullinger – bullisign" />
-        </div>
-        <div class="hero-badge">
-          <span class="badge-number">10+</span>
-          <span class="badge-label">Jahre<br />Gestaltung</span>
+      <div class="hero-photo">
+        <div class="hero-photo-box">
+          <img :src="jasminImg" alt="Porträt von Jasmin Bullinger" width="640" height="700" />
+          <div class="badge">
+            <span class="badge-label">Seit</span>
+            <span class="badge-no">2014</span>
+            <span class="badge-label">in der<br />Gestaltung</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- So arbeite ich -->
-  <section class="section section-warm">
-    <div class="container">
-      <div class="section-header center">
-        <span class="eyebrow">So arbeite ich</span>
-        <h2 class="section-title">Vom Problem zur <em>fertigen Website</em></h2>
-        <p class="section-sub">
-          Gute Gestaltung beginnt nicht im Grafikprogramm, sondern bei den Menschen, die sie nutzen.
-        </p>
-      </div>
-
-      <ol class="process">
-        <li v-for="(step, i) in prozess" :key="step.title" class="process-step reveal">
-          <span class="process-no">{{ String(i + 1).padStart(2, '0') }}</span>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Ausgewählte Projekte -->
+  <!-- AUSGEWÄHLTE ARBEITEN -->
   <section class="section">
-    <div class="container">
-      <div class="section-header center">
-        <span class="eyebrow">Ausgewählte Projekte</span>
-        <h2 class="section-title">Ein Blick in meine Arbeit</h2>
+    <div class="wrap">
+      <div class="works-head">
+        <div>
+          <p class="eyebrow" style="color: var(--c-accent)"><BlobShape class="dot" fill="var(--c-bark)" />Ausgewählte Arbeiten</p>
+          <h2 class="h2" style="margin-top: 14px">Vier Projekte, vier Probleme.</h2>
+        </div>
+        <RouterLink to="/portfolio" class="btn btn-line">Zum Portfolio <span aria-hidden="true">→</span></RouterLink>
       </div>
-
-      <div class="featured">
-        <RouterLink
-          v-for="p in highlights"
-          :key="p.id"
-          :to="{ path: '/portfolio', hash: '#' + p.id }"
-          class="featured-card reveal"
-        >
-          <div class="featured-img"><img :src="p.img" :alt="p.alt" loading="lazy" /></div>
-          <div class="featured-body">
-            <span class="featured-tag">{{ p.tag }}</span>
-            <h3>{{ p.title }}</h3>
-            <p>{{ p.text }}</p>
+      <div class="grid grid-2">
+        <RouterLink v-for="t in teaser" :key="t.id" :to="{ path: '/portfolio', hash: '#' + t.id }" class="tease">
+          <div class="tease-img" :style="{ background: t.bg }">
+            <img v-if="t.img" :src="t.img" alt="" loading="lazy" />
+            <div v-else class="nda" aria-hidden="true">
+              <div class="wf">
+                <div class="wf-row wf-top"><span>Navigation · Projekte</span><i></i></div>
+                <div class="wf-row wf-tiles"><b></b><b></b><b></b></div>
+                <div class="wf-row wf-lines"><b></b><b style="width: 70%"></b></div>
+              </div>
+            </div>
+          </div>
+          <div class="tease-body">
+            <p class="eyebrow tease-tag">{{ t.tag }}</p>
+            <h3 class="tease-title">{{ t.title }}</h3>
+            <p class="tease-text">{{ t.text }}</p>
           </div>
         </RouterLink>
       </div>
-
-      <div class="center more">
-        <RouterLink to="/portfolio" class="btn-ghost">Alle Projekte ansehen</RouterLink>
-      </div>
     </div>
   </section>
+
+  <ProcessBlobs />
+
+  <!-- ZITAT -->
+  <section class="section">
+    <div class="wrap quote-wrap">
+      <svg class="quote-mark" viewBox="0 0 34 28" aria-hidden="true"><path style="fill: var(--c-lav)" d="M0 28V16C0 6 5 1 14 0v6c-5 1-7 4-7 9h7v13zm20 0V16c0-10 5-15 14-16v6c-5 1-7 4-7 9h7v13z" /></svg>
+      <blockquote class="big-quote">„{{ referenzen[0].quote }}“</blockquote>
+      <p class="quote-by"><strong>{{ referenzen[0].name }}</strong>, {{ referenzen[0].role }}</p>
+      <RouterLink to="/referenzen" class="btn btn-line">Alle Referenzen <span aria-hidden="true">→</span></RouterLink>
+    </div>
+  </section>
+
+  <CtaBand />
 </template>
 
 <script setup lang="ts">
-import jasminImg from '@/assets/jasmin.png'
+import BlobShape from '@/components/BlobShape.vue'
+import ProcessBlobs from '@/components/ProcessBlobs.vue'
+import CtaBand from '@/components/CtaBand.vue'
+import { referenzen } from '@/data/referenzen'
+import jasminImg from '@/assets/brand/jasmin-blob.webp'
 import imgNaehrraum from '@/assets/portfolio/naehrraum-desk-home.webp'
 import imgEla from '@/assets/portfolio/ela.webp'
 import imgNivea from '@/assets/portfolio/nivea.webp'
-import { useReveal } from '@/composables/useReveal'
-useReveal()
 
-const prozess = [
-  { title: 'Verstehen', text: 'Wer nutzt die Seite, und was wollen diese Menschen dort erreichen? Ziele, Zielgruppen und Probleme klären.' },
-  { title: 'Strukturieren', text: 'Inhalte ordnen und Wege planen: Informationsarchitektur, Sitemap und User Flows.' },
-  { title: 'Skizzieren', text: 'Ideen früh sichtbar machen, mit Wireframes und klickbaren Prototypen.' },
-  { title: 'Gestalten & Umsetzen', text: 'UI-Design, Design-System und die technische Umsetzung, zum Beispiel in WordPress, HTML und CSS.' },
-  { title: 'Testen & Optimieren', text: 'Mit echten Nutzer*innen testen, messen und verbessern, inklusive SEO-Grundlagen.' },
-]
-
-const highlights = [
-  { id: 'naehrraum', tag: 'Website & Buchung', title: 'Website nährraum', img: imgNaehrraum,
-    alt: 'Startseite der Website nährraum',
-    text: 'Konzeption, Design und WordPress-Umsetzung einer Website mit Online-Buchung für eine Ernährungsberatung.' },
-  { id: 'ela', tag: 'Product Launch', title: 'Onlineshop ELA', img: imgEla,
-    alt: 'Seiten des ELA Onlineshops',
-    text: 'Shop-Struktur, Produktdetailseiten und Design-System für die Kosmetikmarke von Pamela Reif.' },
-  { id: 'nivea', tag: 'UX-Projekt', title: 'Inclusive Design NIVEA', img: imgNivea,
-    alt: 'Konzept für barrierefreie NIVEA-Verpackung',
-    text: 'Barrierefreie Verpackung, digitale Zugänglichkeit und eine Kampagne mit echten Menschen.' },
+const teaser = [
+  { id: 'naehrraum', img: imgNaehrraum, bg: 'var(--c-duck)', tag: 'Kundenprojekt · Website', title: 'nährraum', text: 'Website mit Online-Buchung für eine Ernährungsberatung für Familien.' },
+  { id: 'bachelorarbeit', img: '', bg: 'var(--c-lav)', tag: 'Bachelorarbeit · UX/UI', title: 'Software für neuronale Netze', text: 'Komplette Oberfläche einer B2B-Software, nach Design Thinking und siebenmal getestet.' },
+  { id: 'ela', img: imgEla, bg: 'var(--c-sand)', tag: 'Werkstudentin · E-Commerce', title: 'Onlineshop ELA', text: 'Shop-Struktur und Design zum Launch einer neuen Kosmetikmarke.' },
+  { id: 'nivea', img: imgNivea, bg: 'var(--c-butter)', tag: 'Studienprojekt · Inclusive Design', title: 'NIVEA for everyone', text: 'Verpackung und Kampagne, die niemanden ausschließen.' },
 ]
 </script>
 
 <style scoped>
-.hero {
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding-top: 6rem;
-  position: relative;
-  overflow: hidden;
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero-shape { width: 560px; right: -210px; top: -80px; transform: rotate(-14deg); }
+.hero-inner { position: relative; display: grid; gap: 32px; padding-top: 24px; padding-bottom: 56px; align-items: center; }
+.hero-photo { display: flex; justify-content: center; }
+.hero-photo-box { position: relative; width: 100%; max-width: 300px; }
+.badge {
+  position: absolute; left: -12px; bottom: 10%;
+  display: flex; align-items: center; gap: 10px;
+  background: var(--c-ink); color: var(--c-cream);
+  border-radius: 14px; padding: 10px 14px;
+  box-shadow: 0 12px 30px rgba(47, 43, 34, .22);
 }
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-.hero-headline {
-  font-family: var(--f-display);
-  font-size: var(--size-hero);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-  color: var(--c-basil);
-  margin-bottom: 1.5rem;
-}
-.hero-headline em { font-style: normal; color: var(--c-thyme); }
-.hero-sub {
-  font-size: var(--size-md);
-  font-weight: 300;
-  color: var(--c-mid);
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-  max-width: 480px;
-}
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.badge-no { font-size: 26px; font-weight: 600; line-height: 1; }
+.badge-label { font-size: 12px; line-height: 1.35; }
+.hero-lead { max-width: 540px; margin-bottom: 32px; }
+.job-note { margin-top: 24px; font-size: 14px; display: flex; gap: 10px; align-items: center; }
+.job-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c-ink); flex: none; }
 
-.hero-image-wrap { position: relative; display: flex; justify-content: center; }
-.hero-image-blob {
-  position: absolute;
-  inset: -20px;
-  background: var(--c-sand);
-  opacity: 0.5;
-  border-radius: 62% 38% 50% 50% / 44% 50% 50% 56%;
-  z-index: 0;
-  animation: blob-drift 12s ease-in-out infinite alternate;
-}
-.hero-photo {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3/4;
-  background: var(--c-basket);
-  border-radius: 58% 42% 48% 52% / 46% 52% 48% 54%;
-  overflow: hidden;
-}
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.hero-badge {
-  position: absolute;
-  bottom: 8%; left: -10%;
-  z-index: 2;
-  background: var(--c-basil);
-  color: var(--c-linen);
-  border-radius: 14px;
-  padding: 0.8rem 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 8px 24px rgba(64,66,34,0.18);
-}
-.badge-number {
-  font-family: var(--f-display);
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
-}
-.badge-label { font-size: 0.75rem; font-weight: 400; line-height: 1.4; opacity: 0.85; }
-
-/* Prozess */
-.process {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  position: relative;
-}
-.process::before {
-  content: '';
-  position: absolute;
-  top: 1.05rem; left: 0; right: 0;
-  height: 1px;
-  background: var(--c-thyme);
-  opacity: 0.6;
-}
-.process-step { position: relative; padding-top: 3rem; }
-.process-step::before {
-  content: '';
-  position: absolute;
-  top: 0.65rem; left: 0;
-  width: 0.85rem; height: 0.85rem;
-  border-radius: 50%;
-  border: 1.5px solid var(--c-thyme);
-  background: var(--c-linen);
-}
-.process-step:last-child::before { background: var(--c-thyme); }
-.process-no {
-  position: absolute; top: 0; left: 1.5rem;
-  font-weight: 600; font-size: var(--size-md); color: var(--c-thyme);
-}
-.process-step h3 { font-size: var(--size-lg); color: var(--c-basil); margin-bottom: 0.4rem; }
-.process-step p { font-size: var(--size-sm); color: var(--c-mid); font-weight: 300; line-height: 1.6; }
-
-/* Ausgewählte Projekte */
-.featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.featured-card {
-  background: var(--c-linen);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex; flex-direction: column;
+/* Teaser */
+.works-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 36px; }
+.tease {
+  display: flex; flex-direction: column; overflow: hidden; text-decoration: none; color: var(--c-ink);
+  background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius);
   transition: box-shadow var(--trans), transform var(--trans);
 }
-.featured-card:hover { box-shadow: 0 16px 40px rgba(64,66,34,0.13); transform: translateY(-5px); }
-.featured-img { aspect-ratio: 4/3; overflow: hidden; background: var(--c-misty); }
-.featured-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.6s ease; }
-.featured-card:hover .featured-img img { transform: scale(1.04); }
-.featured-body { padding: 1.25rem 1.5rem 1.5rem; }
-.featured-tag {
-  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--c-thyme);
-}
-.featured-body h3 { font-size: var(--size-lg); color: var(--c-basil); margin: 0.25rem 0 0.4rem; }
-.featured-body p { font-size: var(--size-sm); color: var(--c-mid); font-weight: 300; line-height: 1.6; }
-.more { margin-top: 2.5rem; }
+.tease:hover { color: var(--c-ink); box-shadow: 0 16px 40px rgba(47, 43, 34, .13); transform: translateY(-3px); }
+.tease-img { aspect-ratio: 4 / 3; overflow: hidden; }
+.tease-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.tease-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; }
+.tease-tag { color: var(--c-accent); font-size: 11px; }
+.tease-title { font-size: 22px; font-weight: 600; }
+.tease-text { font-size: 15px; line-height: 1.6; color: var(--c-muted); }
 
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-image-wrap { order: -1; max-width: 300px; margin: 0 auto; }
-  .hero-badge { left: 0; bottom: -16px; }
-  .process { grid-template-columns: 1fr; gap: 1.25rem; }
-  .process::before { top: 0; bottom: 0; left: 0.42rem; right: auto; width: 1px; height: auto; }
-  .process-step { padding: 0 0 0 2.2rem; }
-  .process-step::before { top: 0.3rem; }
-  .process-no { position: static; display: block; }
-  .featured { grid-template-columns: 1fr; }
+.nda { height: 100%; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.wf { width: 78%; border: 1.5px solid var(--c-ink); border-radius: 4px; background: var(--c-cream); }
+.wf-row { border-bottom: 1px solid #C9CFCB; padding: 10px 12px; }
+.wf-row:last-child { border-bottom: 0; }
+.wf-top { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; }
+.wf-top i { width: 44px; height: 10px; border-radius: 5px; background: var(--c-ink); }
+.wf-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.wf-tiles b { height: 26px; background: #E3E6E2; border-radius: 2px; }
+.wf-lines b { display: block; height: 7px; background: #E3E6E2; border-radius: 2px; margin-bottom: 6px; }
+
+/* Zitat */
+.quote-wrap { max-width: 920px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
+.big-quote { font-size: clamp(21px, 2.6vw, 30px); line-height: 1.4; letter-spacing: -.01em; }
+.quote-by { font-size: 15px; }
+
+@media (min-width: 900px) {
+  .hero-shape { width: 940px; right: -230px; top: -150px; }
+  .hero-inner { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; padding-top: 72px; padding-bottom: 96px; }
+  .hero-photo-box { max-width: 430px; }
+  .badge { padding: 14px 20px; border-radius: 16px; gap: 12px; }
+  .badge-no { font-size: 34px; }
+  .badge-label { font-size: 13px; }
+  .works-head { margin-bottom: 44px; }
+  .tease-body { padding: 22px 26px 26px; }
 }
 </style>

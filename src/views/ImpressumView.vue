@@ -1,62 +1,46 @@
 <template>
-  <section class="section page-top">
-    <div class="container container-narrow">
-      <h1 class="section-title">Impressum</h1>
+  <section class="legal">
+    <div class="legal-inner">
+      <h1 class="legal-title">Impressum</h1>
+      <div class="rule"></div>
 
-      <div class="legal-body">
-        <h2>Angaben gemäß § 5 TMG</h2>
-        <!-- ✏️ Ersetze die Platzhalter mit deinen echten Daten -->
-        <p class="placeholder">✏️ Vorname Nachname</p>
-        <p class="placeholder">✏️ Straße Hausnummer</p>
-        <p class="placeholder">✏️ PLZ Ort</p>
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>Jasmin Bullinger<br />bullisign – UX/UI- &amp; Markendesign<br />Bahnhofstraße 2<br />73265 Dettingen unter Teck</p>
 
-        <h2>Kontakt</h2>
-        <p>E-Mail: <a href="mailto:bullisign@gmail.com">bullisign@gmail.com</a></p>
+      <h2>Kontakt</h2>
+      <p>E-Mail: <a href="mailto:bullisign@gmail.com">bullisign@gmail.com</a></p>
 
-        <h2>Kleinunternehmerregelung</h2>
-        <p>Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen.</p>
+      <h2>Umsatzsteuer</h2>
+      <p>Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet.</p>
 
-        <h2>Berufsbezeichnung</h2>
-        <p>UI/UX-Designerin & Mediengestalterin (freiberuflich)</p>
+      <h2>Berufsbezeichnung</h2>
+      <p>UX/UI- und Markendesignerin (freiberuflich)</p>
 
-        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-        <p class="placeholder">✏️ Vorname Nachname, Adresse wie oben</p>
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>Jasmin Bullinger, Bahnhofstraße 2, 73265 Dettingen unter Teck</p>
 
-        <h2>Haftungsausschluss</h2>
-        <p>
-          Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt.
-          Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird keine Gewähr übernommen.
-          Für externe Links gilt: Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.
-          Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Links umgehend entfernt.
-        </p>
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 
-        <h2>Urheberrecht</h2>
-        <p>
-          Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheberrecht.
-          Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des Urheberrechts
-          bedürfen der schriftlichen Zustimmung der Autorin.
-        </p>
-      </div>
+      <h2>Haftung für Inhalte</h2>
+      <p>Die Inhalte dieser Website habe ich mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieterin bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+
+      <h2>Haftung für Links</h2>
+      <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für diese Inhalte ist stets der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Werden mir Rechtsverletzungen bekannt, entferne ich die betreffenden Links umgehend.</p>
+
+      <h2>Urheberrecht</h2>
+      <p>Die Inhalte und Arbeiten auf dieser Website unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung. Die Rechte an gezeigten Marken und Logos liegen bei deren Inhabern.</p>
     </div>
   </section>
 </template>
 
-<style scoped>
-.page-top { padding-top: calc(var(--space-xl) + 4rem); min-height: 60svh; }
-.legal-body { margin-top: 2rem; }
-.legal-body h2 {
-  font-family: var(--f-display); font-size: var(--size-lg);
-  font-weight: 400; color: var(--c-basil);
-  margin: 2rem 0 0.5rem;
-}
-.legal-body h2:first-child { margin-top: 0; }
-.legal-body p { font-size: var(--size-sm); color: var(--c-mid); font-weight: 300; margin-bottom: 0.4rem; }
-.legal-body a { color: var(--c-basil); text-decoration: underline; }
-.placeholder {
-  display: inline-block;
-  background: rgba(168,170,88,0.15); border: 1px dashed var(--c-thyme);
-  border-radius: 6px; padding: 0.4rem 0.8rem;
-  font-size: var(--size-sm) !important; color: var(--c-basil) !important;
-  margin-bottom: 0.25rem;
-}
+<style>
+.legal { padding: 40px 0 var(--sec-y); }
+.legal-inner { max-width: 760px; margin: 0 auto; padding: 0 var(--pad-x); }
+.legal-title { font-size: clamp(36px, 5vw, 52px); font-weight: 600; letter-spacing: -.02em; margin-bottom: 12px; }
+.legal h2 { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--c-sage); margin: 36px 0 10px; }
+.legal p, .legal li { font-size: 17px; line-height: 1.7; margin-bottom: 10px; }
+.legal ul { padding-left: 22px; margin: 0 0 10px; }
+.legal .stand { font-size: 14px; color: var(--c-muted); margin-top: 12px; }
+@media (min-width: 900px) { .legal { padding-top: 64px; } }
 </style>

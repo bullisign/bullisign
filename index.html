@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bullisign – Websites, UX/UI & Corporate Design | Jasmin Bullinger</title>
-    <meta name="description" content="Jasmin Bullinger – Website- und UX/UI-Designerin sowie Mediengestalterin aus Dettingen unter Teck (Region Stuttgart). Websites, UX/UI Design, Corporate Design und Print." />
+    <title>bullisign – UX/UI- & Markendesign | Jasmin Bullinger</title>
+    <meta name="description" content="Jasmin Bullinger – UX/UI- und Markendesignerin aus Dettingen unter Teck (Region Stuttgart). Websites, digitale Oberflächen und Markenauftritte, von der Konzeption bis zur Umsetzung." />
+    <meta name="theme-color" content="#FBF8F2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="bullisign – UX/UI- & Markendesign" />
+    <meta property="og:description" content="Gestaltung, die deine Marke unverwechselbar macht. Websites, digitale Oberflächen und Markenauftritte von Jasmin Bullinger." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bullisign.com/" />
   </head>
   <body>
+    <!-- Netlify Forms: statische Kopie des Kontaktformulars, damit Netlify es beim Deploy erkennt -->
+    <form name="kontakt" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="betreff" />
+      <textarea name="nachricht"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,83 +1,120 @@
 <template>
-  <section class="section section-warm page-top">
-    <div class="container container-two-col">
-      <div class="about-image-wrap reveal">
-        <div class="about-blob" aria-hidden="true"></div>
-        <div class="about-photo">
-          <img :src="jasminImg" alt="Jasmin Bullinger" />
-        </div>
+  <section class="intro">
+    <div class="wrap intro-inner">
+      <div class="intro-photo">
+        <img :src="jasminImg" alt="Porträt von Jasmin Bullinger" width="640" height="700" />
       </div>
-
-      <div class="about-text reveal">
-        <span class="eyebrow">Wer steckt dahinter</span>
-        <h1 class="section-title">Hallo, ich bin<br /><em>Jasmin</em></h1>
-        <p class="about-lead">
-          Ich gestalte vom Problem her und mit echtem Interesse an den Menschen
-          und Projekten, mit denen ich arbeite.
+      <div class="intro-text">
+        <p class="eyebrow"><BlobShape class="dot" />Über mich</p>
+        <h1 class="h1" style="margin: 0">Hallo, ich bin Jasmin.</h1>
+        <p class="intro-lead">Ich komme aus dem Print. Dort habe ich gelernt, dass jedes Detail zählt, bis zum letzten Millimeter Beschnitt.</p>
+        <p class="text">
+          Dann kam das Digitale dazu: Bei netzwerk P habe ich Landingpages und Newsletter gebaut, Screendesigns
+          gestaltet und intern die Rolle als UX-Designerin übernommen. Danach folgte das Studium mit Schwerpunkt UX.
+          Bei der Goodlife Company habe ich an mehreren Onlineshops gearbeitet, darunter ELA, und in meiner
+          Bachelorarbeit eine komplette Software-Oberfläche gestaltet und siebenmal getestet.
         </p>
-        <p class="about-body">
-          Ich bin gelernte Mediengestalterin Digital und Print, habe mich zur Visuellen Designerin
-          weitergebildet und Informationsmanagement und Unternehmenskommunikation mit Schwerpunkt
-          User Experience an der Hochschule Neu-Ulm studiert. Seit 2014 gestalte ich Print- und
-          Digitalmedien, Websites und digitale Oberflächen, zum Beispiel den Onlineshop der
-          Kosmetikmarke ELA oder in meiner Bachelorarbeit die komplette Oberfläche einer Software
-          für industrielle Bildverarbeitung.
+        <p class="text">
+          Heute arbeite ich als bullisign für Kund*innen aus der Region und remote. Am meisten freut es mich, wenn
+          jemand eine Seite benutzt und gar nicht merkt, wie viel Arbeit darin steckt, weil einfach alles da ist,
+          wo man es sucht.
         </p>
-        <p class="about-body">
-          Weil ich aus dem Print komme und Websites auch selbst umsetze, denke ich von Anfang an in
-          beiden Welten: Konzept, Gestaltung und Technik aus einer Hand. Meine Basis ist Dettingen unter
-          Teck in der Region Stuttgart, ich arbeite vor Ort und remote. Ich nehme bewusst eine
-          überschaubare Anzahl an Projekten an, um jedem die Aufmerksamkeit zu geben, die es verdient.
-        </p>
-
-        <div class="skills-row">
-          <span v-for="s in skills" :key="s" class="skill-tag">{{ s }}</span>
-        </div>
-
-        <RouterLink to="/kontakt" class="btn-primary">Lass uns reden</RouterLink>
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="wrap two">
+      <div class="weg">
+        <p class="eyebrow" style="color: var(--c-accent)"><BlobShape class="dot" fill="var(--c-bark)" />Mein Weg</p>
+        <ol class="tl" aria-label="Mein Weg, neueste Station zuerst">
+          <li v-for="s in weg" :key="s.title"><strong>{{ s.title }}</strong><span>{{ s.sub }}</span></li>
+        </ol>
+      </div>
+      <div class="side">
+        <div class="box">
+          <p class="eyebrow" style="color: var(--c-sage)">Werkzeuge</p>
+          <ul class="chips">
+            <li v-for="t in tools" :key="t" class="chip">{{ t }}</li>
+          </ul>
+        </div>
+        <div id="arbeitgeber" class="box box-ink">
+          <p class="eyebrow" style="color: var(--c-butter)">Für Arbeitgeber*innen</p>
+          <p class="side-title">Ich suche eine Festanstellung im UX/UI-Design.</p>
+          <p class="side-text">
+            Gern remote oder hybrid in der Region Stuttgart, ab sofort verfügbar. Lebenslauf, Arbeitszeugnisse und
+            Empfehlungsschreiben schicke ich dir gern zu.
+          </p>
+          <div class="btn-row">
+            <RouterLink :to="{ path: '/kontakt', query: { thema: 'Bewerbungsunterlagen' } }" class="btn btn-light">Unterlagen anfragen <span aria-hidden="true">→</span></RouterLink>
+            <a href="https://www.linkedin.com/in/jasmin-b-416882146" target="_blank" rel="noopener" class="btn btn-line-light">LinkedIn</a>
+          </div>
+        </div>
+        <div class="box box-duck">
+          <p class="eyebrow">Abseits vom Bildschirm</p>
+          <p class="side-text">
+            Wenn ich nicht gestalte, stehe ich oft auf dem Snowboard. Beim Skiclub Renningen betreue ich die
+            SkiClub-Kids, bin Anwärterin als Snowboardlehrerin und kümmere mich um Website und Instagram.
+          </p>
+        </div>
+        <div class="btn-row">
+          <RouterLink to="/referenzen" class="btn btn-dark">Referenzen lesen <span aria-hidden="true">→</span></RouterLink>
+          <RouterLink to="/portfolio" class="btn btn-line">Portfolio ansehen</RouterLink>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
 </template>
 
 <script setup lang="ts">
-import { useReveal } from '@/composables/useReveal'
-import jasminImg from '@/assets/jasmin.png'
-useReveal()
+import BlobShape from '@/components/BlobShape.vue'
+import CtaBand from '@/components/CtaBand.vue'
+import jasminImg from '@/assets/brand/jasmin-blob.webp'
 
-const skills = ['Figma', 'Adobe XD', 'Photoshop', 'InDesign', 'Illustrator', 'HTML/CSS', 'JavaScript', 'WordPress', 'Webflow', 'Google Analytics', 'Social Media']
+const weg = [
+  { title: 'Selbstständig als bullisign', sub: 'UX/UI- und Markendesign für Kund*innen aus der Region und remote' },
+  { title: 'Bachelorarbeit und Werkstudentin UX/UI', sub: 'aku.automation GmbH · Software-Oberfläche, Design System, 7 Usability-Tests' },
+  { title: 'Praktikum und Werkstudentin UX/UI', sub: 'Goodlife Company · Onlineshops, u. a. ELA' },
+  { title: 'B.A. Informationsmanagement & Unternehmenskommunikation', sub: 'Hochschule Neu-Ulm · Schwerpunkt User Experience' },
+  { title: 'Technical Operator & interne UX-Designerin', sub: 'netzwerk P · parallel Weiterbildung zur Visuellen Designerin' },
+  { title: 'Ausbildung Mediengestalterin Digital & Print', sub: 'netzwerk P · Start 2014' },
+]
+
+const tools = ['Figma', 'Adobe XD', 'Miro', 'Photoshop', 'Illustrator', 'InDesign', 'HTML & CSS', 'JavaScript & Vue', 'WordPress', 'Webflow', 'Shopify', 'Google Analytics', 'Hotjar', 'Asana']
 </script>
 
 <style scoped>
-.page-top { padding-top: calc(var(--space-xl) + 4rem); min-height: 100svh; }
-.about-image-wrap { position: relative; display: flex; justify-content: center; }
-.about-blob {
-  position: absolute; inset: -24px;
-  background: var(--c-misty); opacity: 0.35;
-  border-radius: 50% 40% 55% 45% / 45% 55% 45% 55%;
-  z-index: 0;
-  animation: blob-drift 15s ease-in-out infinite alternate-reverse;
+.intro { background: var(--c-sand); }
+.intro-inner { display: grid; gap: 32px; align-items: center; padding-top: 32px; padding-bottom: 56px; }
+.intro-photo { display: flex; justify-content: center; }
+.intro-photo img { width: 100%; max-width: 260px; }
+.intro-text { display: flex; flex-direction: column; gap: 18px; }
+.intro-lead { font-size: 20px; line-height: 1.55; }
+
+.two { display: grid; gap: 48px; }
+.weg { display: flex; flex-direction: column; gap: 28px; }
+.tl { list-style: none; margin: 0; padding: 0; border-left: 1.5px solid var(--c-ink); }
+.tl li { position: relative; padding: 0 0 20px 22px; font-size: 16px; line-height: 1.45; display: flex; flex-direction: column; }
+.tl li span { font-size: 14px; }
+.tl li::before { content: ''; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--c-ink); background: var(--c-cream); }
+.tl li:first-child::before { background: var(--c-ink); }
+.tl li:last-child { padding-bottom: 0; }
+.side { display: flex; flex-direction: column; gap: 24px; }
+.box { background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; }
+.box-duck { background: var(--c-duck); border-color: var(--c-duck); }
+.btn-line-light { background: transparent; color: var(--c-cream); border-color: var(--c-cream); }
+.btn-line-light:hover { background: var(--c-cream); color: var(--c-ink); }
+.box-ink { background: var(--c-ink); border-color: var(--c-ink); color: var(--c-cream); scroll-margin-top: 90px; }
+.side-title { font-size: 22px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; }
+.side-text { font-size: 16px; line-height: 1.65; }
+
+@media (min-width: 900px) {
+  .intro-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; padding-top: 72px; padding-bottom: 96px; }
+  .intro-photo img { max-width: 420px; }
+  .intro-lead { font-size: 21px; }
+  .two { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; }
+  .box { padding: 26px 28px; }
 }
-.about-photo {
-  position: relative; z-index: 1;
-  width: 100%; max-width: 380px; aspect-ratio: 3/4;
-  background: var(--c-basket);
-  border-radius: 52% 48% 44% 56% / 50% 46% 54% 50%;
-  overflow: hidden;
-}
-.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.about-lead {
-  font-family: var(--f-display); font-size: var(--size-xl);
-  font-weight: 400; color: var(--c-basil);
-  margin: 0.5rem 0 1rem; line-height: 1.5;
-}
-.about-body { font-size: var(--size-sm); font-weight: 300; color: var(--c-mid); line-height: 1.75; margin-bottom: 1rem; }
-.skills-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
-.skill-tag {
-  font-size: var(--size-xs); font-weight: 500; letter-spacing: 0.06em;
-  color: var(--c-basil);
-  background: rgba(168,170,88,0.18); border: 1px solid rgba(168,170,88,0.35);
-  border-radius: 999px; padding: 0.3rem 0.8rem;
-}
-@media (max-width: 900px) { .about-image-wrap { max-width: 300px; margin: 0 auto; } }
 </style>

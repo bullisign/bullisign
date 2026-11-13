@@ -1,98 +1,72 @@
 <template>
-  <section class="section page-top">
-    <div class="blob blob-3" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-header center">
-        <span class="eyebrow">Was ich anbiete</span>
-        <h1 class="section-title">Leistungen</h1>
-        <p class="section-sub">Gestaltung aus einer Hand: von der Website über den Markenauftritt bis zum Druckprodukt.</p>
-      </div>
+  <PageHead
+    eyebrow="Leistungen"
+    title="Wobei ich dir helfen kann."
+    lead="Konzept, Gestaltung und Umsetzung aus einer Hand. Du hast eine Ansprechpartnerin vom ersten Gespräch bis zur fertigen Website oder zum Druckprodukt."
+    shape="var(--c-duck)"
+  />
 
-      <div class="leistungen-grid">
-        <article v-for="item in leistungen" :key="item.title" class="leistung-card reveal">
-          <div class="leistung-icon-wrap" v-html="item.icon"></div>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.text }}</p>
-        </article>
-      </div>
+  <section class="leistungen">
+    <div class="wrap grid grid-2">
+      <article v-for="l in leistungen" :key="l.title" class="card">
+        <span class="icon" :style="{ background: l.color }">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" v-html="l.icon"></svg>
+        </span>
+        <h2 class="l-title">{{ l.title }}</h2>
+        <p class="l-text">{{ l.text }}</p>
+        <ul class="ticks l-list">
+          <li v-for="p in l.points" :key="p">{{ p }}</li>
+        </ul>
+      </article>
     </div>
   </section>
+
+  <ProcessBlobs />
+  <CtaBand />
 </template>
 
 <script setup lang="ts">
-import { useReveal } from '@/composables/useReveal'
-useReveal()
+import PageHead from '@/components/PageHead.vue'
+import ProcessBlobs from '@/components/ProcessBlobs.vue'
+import CtaBand from '@/components/CtaBand.vue'
 
 const leistungen = [
   {
-    title: 'Websites & UX/UI Design',
-    text: 'Websites und digitale Oberflächen, die Besucher*innen einfach zum Ziel führen: von Struktur, Wireframes und klickbarem Prototyp bis zur fertigen, responsiven Umsetzung in WordPress, HTML und CSS. Auf Wunsch mit Online-Buchung und SEO-Grundlagen.',
-    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
-      <circle cx="14" cy="14" r="5" fill="currentColor" opacity="0.3"/>
-    </svg>`
+    title: 'UX/UI-Design',
+    color: 'var(--c-duck)',
+    icon: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/>',
+    text: 'Oberflächen für Software, Apps und Shops, die Menschen ohne Umwege ans Ziel bringen.',
+    points: ['Anforderungen, Personas und User Journeys', 'Informationsarchitektur und User Flows', 'Wireframes und klickbare Prototypen in Figma', 'UI-Design und Design System mit Komponentenbibliothek', 'Usability-Tests mit echten Nutzer*innen'],
   },
   {
-    title: 'Corporate Design',
-    text: 'Ganzheitliche visuelle Identitäten: Logo, Farbwelt, Typografie und Styleguide für einen konsistenten Markenauftritt, digital und im Druck.',
-    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <rect x="4" y="4" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M4 11h20M11 4v20" stroke="currentColor" stroke-width="1.5"/>
-    </svg>`
+    title: 'Websites',
+    color: 'var(--c-butter)',
+    icon: '<path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/>',
+    text: 'Von der Sitemap bis zur fertigen Seite, die du im Alltag selbst pflegen kannst.',
+    points: ['Konzept, Sitemap und Seitenstruktur', 'Design für Desktop und Mobile', 'Umsetzung in WordPress, Webflow oder HTML/CSS', 'Online-Buchung und Formulare', 'SEO-Grundlagen und datenschutzkonforme Einbindung'],
   },
   {
-    title: 'Grafik & Social Media',
-    text: 'Social-Media-Content, Präsentationen, Infografiken, Newsletter und Landingpages, passend zu deiner Marke.',
-    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M5 22L10 12l5 7 4-5 4 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`
+    title: 'Marke & Corporate Design',
+    color: 'var(--c-lav)',
+    icon: '<circle cx="12" cy="12" r="8"/><path d="M9 15c1-4 2-7 4-7s1 3-1 4 3 1 3 3"/>',
+    text: 'Ein Auftritt, der wiedererkennbar ist, digital und gedruckt.',
+    points: ['Logo und Bildmarke', 'Farbwelt und Typografie', 'Styleguide für den Alltag', 'Geschäftsausstattung'],
   },
   {
-    title: 'Printwerbemittel',
-    text: 'Flyer, Broschüren, Plakate, Etiketten, Geschäftsdrucksachen – druckfertig und mit Liebe zum Detail.',
-    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <rect x="5" y="3" width="18" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M9 9h10M9 13h10M9 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>`
+    title: 'Print & Social',
+    color: 'var(--c-sand)',
+    icon: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>',
+    text: 'Als gelernte Mediengestalterin weiß ich, was in der Druckerei ankommen muss.',
+    points: ['Flyer, Broschüren und Plakate', 'Etiketten und Verpackung', 'Social-Media-Content und -Strategie', 'Druckfertige Daten'],
   },
 ]
 </script>
 
 <style scoped>
-.page-top { padding-top: calc(var(--space-xl) + 4rem); }
-.leistungen-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  position: relative;
-  z-index: 1;
-}
-.leistung-card {
-  background: var(--c-linen);
-  border-radius: 14px;
-  padding: 2rem;
-  border: 1px solid var(--c-border);
-  transition: box-shadow var(--trans), transform var(--trans);
-}
-.leistung-card:hover { box-shadow: 0 12px 32px rgba(64,66,34,0.1); transform: translateY(-4px); }
-.leistung-icon-wrap {
-  width: 52px; height: 52px;
-  background: rgba(168,170,88,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-thyme);
-  margin-bottom: 1rem;
-}
-.leistung-card h2 {
-  font-family: var(--f-display);
-  font-size: var(--size-xl);
-  font-weight: 500;
-  color: var(--c-basil);
-  margin-bottom: 0.5rem;
-}
-.leistung-card p { font-size: var(--size-sm); color: var(--c-mid); line-height: 1.7; font-weight: 300; }
-
-@media (max-width: 680px) { .leistungen-grid { grid-template-columns: 1fr; } }
+.leistungen { padding: 8px 0 var(--sec-y); }
+.icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--c-ink); }
+.l-title { font-size: 24px; font-weight: 600; letter-spacing: -.01em; }
+.l-text { font-size: 16px; line-height: 1.6; color: var(--c-muted); }
+.l-list { margin-top: 6px; padding-top: 18px; border-top: 1px solid var(--c-line); }
+@media (min-width: 900px) { .l-title { font-size: 26px; } }
 </style>
