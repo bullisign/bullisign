@@ -1,0 +1,17 @@
+# bullisign – Jasmin Bullinger
+
+> UX/UI- und Markendesignerin aus Dettingen unter Teck (Region Stuttgart). Gestaltet Websites, digitale Oberflächen und Markenauftritte vom Problem her und setzt sie selbst um – von der Struktur bis zur fertigen Website oder zum Druckprodukt. Seit 2014 in der Gestaltung. Offen für Projekte und für eine Festanstellung im UX/UI-Design (remote oder hybrid, Region Stuttgart).
+
+## Profil
+- Ausbildung zur Mediengestalterin Digital & Print, Technical Operator und interne UX-Designerin bei netzwerk P, Weiterbildung zur Visuellen Designerin
+- B.A. Informationsmanagement & Unternehmenskommunikation, Hochschule Neu-Ulm, Schwerpunkt User Experience
+- UX/UI Design bei der Goodlife Company (Onlineshops, u. a. ELA), Bachelorarbeit bei aku.automation (UX/UI einer KI-Software, Design Thinking, 7 Usability-Tests, Design System)
+- Selbstständig als bullisign seit Juli 2026
+- Werkzeuge: Figma, Adobe XD, Miro, Photoshop, Illustrator, InDesign, HTML & CSS, JavaScript & Vue, WordPress, Webflow, Shopify, Google Analytics, Hotjar, Asana
+
+## Seiten
+- [Portfolio](https://bullisign.com/portfolio): nährraum (Website mit Online-Buchung), Bachelorarbeit (Software für neuronale Netze, unter NDA), Onlineshop ELA, NIVEA Inclusive Design, weitere Marken-, Print- und Social-Media-Arbeiten
+- [Leistungen](https://bullisign.com/leistungen): UX/UI-Design, Websites, Marke & Corporate Design, Print & Social
+- [Über mich](https://bullisign.com/ueber-mich): Werdegang, Werkzeuge, Verfügbarkeit
+- [Referenzen](https://bullisign.com/referenzen): Auszüge aus Empfehlungsschreiben und Arbeitszeugnissen
+- [Kontakt](https://bullisign.com/kontakt): bullisign@gmail.com, LinkedIn: https://www.linkedin.com/in/jasmin-b-416882146

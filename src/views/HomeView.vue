@@ -31,7 +31,7 @@
   </section>
 
   <!-- AUSGEWÄHLTE ARBEITEN -->
-  <section class="section">
+  <section class="section works">
     <div class="wrap">
       <div class="works-head">
         <div>
@@ -99,7 +99,7 @@ const teaser = [
 /* Hero */
 .hero { position: relative; overflow: hidden; }
 .hero-shape { width: 560px; right: -210px; top: -80px; transform: rotate(-14deg); }
-.hero-inner { position: relative; display: grid; gap: 32px; padding-top: 24px; padding-bottom: 56px; align-items: center; }
+.hero-inner { position: relative; display: grid; gap: 32px; padding-top: 24px; padding-bottom: 16px; align-items: center; }
 .hero-photo { display: flex; justify-content: center; }
 .hero-photo-box { position: relative; width: 100%; max-width: 300px; }
 .badge {
@@ -116,6 +116,7 @@ const teaser = [
 .job-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c-ink); flex: none; }
 
 /* Teaser */
+.works { padding-top: 40px; }
 .works-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 36px; }
 .tease {
   display: flex; flex-direction: column; overflow: hidden; text-decoration: none; color: var(--c-ink);
@@ -152,6 +153,7 @@ const teaser = [
   .badge { padding: 14px 20px; border-radius: 16px; gap: 12px; }
   .badge-no { font-size: 34px; }
   .badge-label { font-size: 13px; }
+  .works { padding-top: var(--sec-y); }
   .works-head { margin-bottom: 44px; }
   .tease-body { padding: 22px 26px 26px; }
 }
