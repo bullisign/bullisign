@@ -43,6 +43,7 @@ function fill(page, url) {
 for (const url of prerenderPaths) {
   const page = await render(url, manifest)
   const file = url === '/' ? 'index.html' : `${url.slice(1)}.html`
+  fs.mkdirSync(path.dirname(path.join(dist, file)), { recursive: true })
   fs.writeFileSync(path.join(dist, file), fill(page, url))
   console.log(`  prerendered ${url} → dist/${file}`)
 }

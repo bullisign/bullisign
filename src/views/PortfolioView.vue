@@ -150,7 +150,7 @@
   </article>
 
   <!-- WEITERE ARBEITEN -->
-  <section class="section more">
+  <section id="weitere-arbeiten" class="section more">
     <div class="wrap">
       <div class="center more-head">
         <p class="eyebrow center" style="color: var(--c-accent)">Weitere Arbeiten</p>
@@ -167,14 +167,15 @@
         </div>
       </div>
       <div class="grid grid-3">
-        <article v-for="w in sichtbar" :key="w.title" class="work">
+        <RouterLink v-for="w in sichtbar" :key="w.title" :to="`/portfolio/${w.slug}`" class="work">
           <div class="work-img" :style="{ background: w.bg }"><img :src="w.img" :alt="w.alt" loading="lazy" /></div>
           <div class="work-body">
             <p class="eyebrow" style="color: var(--c-accent); font-size: 11px">{{ w.tag }}</p>
             <h3 class="work-title">{{ w.title }}</h3>
             <p class="work-text">{{ w.text }}</p>
+            <span class="work-more">Projekt ansehen <span aria-hidden="true">→</span></span>
           </div>
-        </article>
+        </RouterLink>
       </div>
       <div class="wip">
         <p class="eyebrow"><BlobShape class="dot" />Aktuell in Arbeit</p>
@@ -276,10 +277,20 @@ const sichtbar = computed(() =>
   border-radius: 999px; border: 1.5px solid var(--c-ink); background: transparent; color: var(--c-ink); cursor: pointer;
 }
 .fbtn[aria-pressed='true'] { background: var(--c-ink); color: var(--c-cream); }
-.work { background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.work {
+  background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; text-decoration: none; color: var(--c-ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.work:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(47, 43, 34, .12); color: var(--c-ink); }
+.work:hover .work-more { color: var(--c-ink); }
+.work-img img { transition: transform .4s ease; }
+.work:hover .work-img img { transform: scale(1.03); }
+.work-more { margin-top: auto; padding-top: 6px; font-size: 15px; font-weight: 500; color: var(--c-accent); }
+@media (prefers-reduced-motion: reduce) { .work, .work-img img { transition: none; } .work:hover { transform: none; } .work:hover .work-img img { transform: none; } }
 .work-img { aspect-ratio: 4 / 3; overflow: hidden; }
 .work-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.work-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; }
+.work-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .work-title { font-size: 20px; font-weight: 600; }
 .work-text { font-size: 15px; line-height: 1.6; color: var(--c-muted); }
 .wip { margin-top: 40px; border: 1.5px dashed var(--c-ink); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }

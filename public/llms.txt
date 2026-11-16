@@ -11,6 +11,11 @@
 
 ## Seiten
 - [Portfolio](https://bullisign.com/portfolio): nährraum (Website mit Online-Buchung), Bachelorarbeit (Software für neuronale Netze, unter NDA), Onlineshop ELA, NIVEA Inclusive Design, weitere Marken-, Print- und Social-Media-Arbeiten
+  - [Laborgeräte-Süd](https://bullisign.com/portfolio/laborgeraete-sued): Corporate Identity, Kundenprojekt im Studium; Jasmins Entwurf wurde aus acht ausgewählt
+  - [Gunti Aroma](https://bullisign.com/portfolio/gunti-aroma): Webdesign und Design-System für eine Kaffeerösterei
+  - [Bike-Buch Stuttgart](https://bullisign.com/portfolio/bike-buch-stuttgart): Editorial, Neugestaltung eines Rad-Wanderführers bis zum Dummy
+  - [Social Media & Content](https://bullisign.com/portfolio/social-media): Instagram-Content, GIFs und Reels für schultech, HYPT und SkiClub Renningen
+  - [Online-Magazin ABSTRACTA](https://bullisign.com/portfolio/abstracta): Medienkonzept mit Video, Instagram und Website
 - [Leistungen](https://bullisign.com/leistungen): UX/UI-Design, Websites, Marke & Corporate Design, Print & Social
 - [Über mich](https://bullisign.com/ueber-mich): Werdegang, Werkzeuge, Verfügbarkeit
 - [Referenzen](https://bullisign.com/referenzen): Auszüge aus Empfehlungsschreiben und Arbeitszeugnissen

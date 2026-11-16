@@ -1,5 +1,6 @@
 import { createRouter, type RouteRecordRaw, type RouterHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import { weitereArbeiten } from '@/data/arbeiten'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -31,6 +32,12 @@ export const routes: RouteRecordRaw[] = [
       description: 'Ausgewählte Arbeiten von Jasmin Bullinger: Website mit Online-Buchung für nährraum, UX/UI einer KI-Software (Bachelorarbeit, Design Thinking, 7 Usability-Tests), Onlineshop ELA und Inclusive Design für NIVEA.',
     },
   },
+  ...weitereArbeiten.map((w) => ({
+    path: `/portfolio/${w.slug}`,
+    name: `arbeit-${w.slug}`,
+    component: () => import('@/views/ArbeitView.vue'),
+    meta: { title: `${w.title} – ${w.tag} | ${brand}`, description: w.meta },
+  })),
   {
     path: '/leistungen',
     name: 'leistungen',

@@ -9,10 +9,12 @@
         <h1 class="h1" style="margin: 0">Hallo, ich bin Jasmin.</h1>
         <p class="intro-lead">Ich komme aus dem Print. Dort habe ich gelernt, dass jedes Detail zählt, bis zum letzten Millimeter Beschnitt.</p>
         <p class="text">
-          Dann kam das Digitale dazu: Bei netzwerk P habe ich Landingpages und Newsletter gebaut, Screendesigns
-          gestaltet und intern die Rolle als UX-Designerin übernommen. Danach folgte das Studium mit Schwerpunkt UX.
-          Bei der Goodlife Company habe ich an mehreren Onlineshops gearbeitet, darunter ELA, und in meiner
-          Bachelorarbeit eine komplette Software-Oberfläche gestaltet und siebenmal getestet.
+          Irgendwann hat mich mehr interessiert, was auf dem Bildschirm passiert: Warum klickt jemand auf einen
+          Button und jemand anderes nicht? Wo bleiben Menschen hängen? Also habe ich angefangen, Websites nicht nur zu
+          gestalten, sondern selbst zu bauen, und habe UX studiert. Seitdem habe ich Onlineshops für Marken mit
+          riesiger Community mitgestaltet, Instagram-Feeds entwickelt, die man beim Scrollen sofort wiedererkennt,
+          und für eine KI-Software eine komplette Oberfläche entworfen, die ich so lange getestet habe, bis sie sich
+          selbstverständlich anfühlte.
         </p>
         <p class="text">
           Heute arbeite ich als bullisign für Kund*innen aus der Region und remote. Am meisten freut es mich, wenn
@@ -54,7 +56,7 @@
           <p class="eyebrow">Abseits vom Bildschirm</p>
           <p class="side-text">
             Wenn ich nicht gestalte, stehe ich oft auf dem Snowboard. Beim Skiclub Renningen betreue ich die
-            SkiClub-Kids, bin Anwärterin als Snowboardlehrerin und kümmere mich um Website und Instagram.
+            SkiClub-Kids, bin Anwärterin als Snowboardlehrerin und kümmere mich um Website, Instagram und Reels.
           </p>
         </div>
         <div class="btn-row">
