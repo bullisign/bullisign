@@ -35,59 +35,63 @@
     </div>
   </article>
 
-  <!-- 02 Bachelorarbeit -->
+  <!-- 02 Bachelorarbeit (Text-Case-Study, Inhalte durch Arbeitszeugnis gedeckt) -->
   <article id="bachelorarbeit" class="band">
     <div class="wrap">
-      <div class="case flip">
-        <div class="case-text">
-          <p class="eyebrow">02 · Bachelorarbeit · aku.automation GmbH · 2024</p>
-          <h2 class="h3">Eine Software für neuronale Netze, gestaltet von null an</h2>
-          <div class="rule"></div>
-          <p class="text">
-            Für meine Bachelorarbeit habe ich nach dem Design-Thinking-Prozess die komplette Oberfläche einer
-            cloudbasierten B2B-Software entwickelt, mit der neuronale Netze für die industrielle Bildverarbeitung
-            erstellt und verwaltet werden. Die Inhalte sind vertraulich. Deshalb zeige ich hier keine Screens,
-            sondern wie ich vorgegangen bin.
+      <p class="eyebrow">02 · Bachelorarbeit · aku.automation GmbH · 2024</p>
+      <h2 class="h2 ba-title">Eine Software für neuronale Netze, gestaltet von null an</h2>
+      <p class="lead ba-lead">Die Inhalte sind vertraulich. Deshalb gibt es hier keine Screens, sondern das, worauf es ankommt: das Problem, mein Vorgehen und was ich daraus gelernt habe.</p>
+      <ul class="stats" aria-label="Eckdaten">
+        <li><b>6</b><span>Phasen Design Thinking</span></li>
+        <li><b>7</b><span>Usability-Tests</span></li>
+        <li><b>1</b><span>komplette Komponentenbibliothek</span></li>
+      </ul>
+
+      <div class="cs">
+        <div class="cs-row">
+          <h3 class="cs-label">Problem</h3>
+          <p class="cs-problem">
+            Ein Spezialist für industrielle Bildverarbeitung wollte eine eigene cloudbasierte Software, mit der
+            neuronale Netze erstellt, trainiert und verwaltet werden. Die Nutzer*innen sind Fachleute mit sehr
+            unterschiedlichem Vorwissen. Die Aufgabe: eine Oberfläche, die komplexe KI-Abläufe verständlich macht,
+            ohne Expert*innen auszubremsen.
           </p>
-          <dl class="anno wide">
-            <template v-for="p in phasenText" :key="p.label">
-              <dt>{{ p.label }}</dt><dd>{{ p.text }}</dd>
-            </template>
-          </dl>
         </div>
-        <div class="ba-visuals">
-          <div class="panel">
-            <p class="eyebrow" style="color: var(--c-sage)">Design-Thinking-Prozess</p>
-            <ol class="phases">
-              <li v-for="(p, i) in phasen" :key="p" :class="{ last: i === phasen.length - 1 }">{{ i + 1 }}<br />{{ p }}</li>
+
+        <div class="cs-row">
+          <h3 class="cs-label">Vorgehen</h3>
+          <div>
+            <p class="text">
+              Ich habe nach dem Design-Thinking-Prozess gearbeitet. Zuerst habe ich die Anforderungen der
+              Nutzer*innen ermittelt und sie bei der Arbeit beobachtet. Daraus sind Personas, eine Empathy Map und
+              eine User Journey Map entstanden. Auf dieser Basis habe ich Informationsarchitektur und Hierarchie
+              definiert, dann Wireframes, Screendesigns und einen interaktiven Prototyp in Figma gestaltet. Diesen
+              Prototyp habe ich in sieben Usability-Tests geprüft, die Ergebnisse ausgewertet und das Design
+              weiterentwickelt. Zum Schluss habe ich eine vollständige Komponentenbibliothek aufgebaut und alles mit
+              Entwicklung und Fachabteilungen abgestimmt.
+            </p>
+            <ol class="phases" aria-label="Phasen des Design-Thinking-Prozesses">
+              <li v-for="(p, i) in phasen" :key="p" :class="{ last: i === phasen.length - 1 }"><span>{{ i + 1 }}</span>{{ p }}</li>
             </ol>
             <p class="loop">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5" /></svg>
-              7 Iterationen: nach jedem Test zurück in die Gestaltung
+              Nach jedem Test zurück in die Gestaltung
             </p>
           </div>
-          <div class="panel schema">
-            <div>
-              <p class="eyebrow" style="color: var(--c-sage)">Prinzip Dashboard</p>
-              <div class="wf" aria-hidden="true">
-                <div class="wf-row wf-top"><span>Navigation · Projekte</span><i></i></div>
-                <div class="wf-row"><p class="wf-label">Status auf einen Blick · 3 Kacheln</p><div class="wf-tiles"><b></b><b></b><b></b></div></div>
-                <div class="wf-row"><p class="wf-label">Liste · Filter · Aktion</p><b class="ln"></b><b class="ln" style="width: 80%"></b><b class="ln" style="width: 60%"></b></div>
-              </div>
-              <p class="schema-note">Schematisch, keine echten Inhalte</p>
-            </div>
-            <div>
-              <p class="eyebrow" style="color: var(--c-sage)">Prinzip Bibliothek</p>
-              <div class="lib" aria-hidden="true">
-                <div class="lib-row"><span class="pill dark"></span><span class="pill"></span></div>
-                <div class="lib-input"><b class="ln" style="width: 50%; margin: 0"></b></div>
-                <div class="lib-row"><span class="sw" style="background: var(--c-duck)"></span><span class="sw" style="background: var(--c-butter)"></span><span class="sw" style="background: var(--c-bark)"></span><span class="sw dashed"></span></div>
-                <div class="lib-row"><span class="tag">Tag</span><span class="tag grey">Status</span></div>
-              </div>
-            </div>
+        </div>
+
+        <div class="cs-row">
+          <h3 class="cs-label">Was ich gelernt habe</h3>
+          <div class="learn">
+            <article v-for="(l, i) in learnings" :key="l.title" class="learn-card">
+              <span class="learn-no">0{{ i + 1 }}</span>
+              <h4 class="learn-title">{{ l.title }}</h4>
+              <p class="learn-text">{{ l.text }}</p>
+            </article>
           </div>
         </div>
       </div>
+
       <figure class="ba-quote">
         <svg class="quote-mark" viewBox="0 0 34 28" aria-hidden="true"><path style="fill: var(--c-lav)" d="M0 28V16C0 6 5 1 14 0v6c-5 1-7 4-7 9h7v13zm20 0V16c0-10 5-15 14-16v6c-5 1-7 4-7 9h7v13z" /></svg>
         <div>
@@ -198,12 +202,11 @@ import imgEla from '@/assets/portfolio/ela.webp'
 import imgNivea from '@/assets/portfolio/nivea.webp'
 
 const phasen = ['Verstehen', 'Beobachten', 'Sichtweise definieren', 'Ideen finden', 'Prototyp', 'Testen']
-const phasenText = [
-  { label: 'Verstehen & Beobachten', text: 'Nutzeranforderungen ermittelt, Nutzer*innen beobachtet' },
-  { label: 'Sichtweise definieren', text: 'Personas, Empathy Map, User Journey Map, Informationsarchitektur' },
-  { label: 'Ideen & Prototyp', text: 'Wireframes, Screendesigns, interaktiver Prototyp in Figma' },
-  { label: 'Testen', text: '7 Usability-Tests, ausgewertet und das Design weiterentwickelt' },
-  { label: 'Übergabe', text: 'Design System mit kompletter Komponentenbibliothek in Figma, in enger Abstimmung mit Entwicklung und Fachabteilungen' },
+const learnings = [
+  { title: 'Zuschauen schlägt Fragen', text: 'Bei Software für Fachleute reicht es nicht, Nutzer*innen zu fragen. Viele Gewohnheiten sind so selbstverständlich, dass niemand sie erwähnt. Man sieht sie erst, wenn man bei der Arbeit zuschaut.' },
+  { title: 'Früh testen, auch mit Klick-Prototyp', text: 'Tests mit echten Anwender*innen lohnen sich schon, bevor eine Zeile Code geschrieben ist. Jede Runde hat das Design spürbar verbessert.' },
+  { title: 'Komplexität sortieren, nicht verstecken', text: 'KI-Abläufe bleiben komplex. Die Aufgabe des Designs ist, sie in eine klare Reihenfolge und eine verständliche Struktur zu bringen.' },
+  { title: 'Die Bibliothek ist die Übergabe', text: 'Eine saubere Komponentenbibliothek ist kein Extra, sondern das, womit das Entwicklungsteam nach dem Projekt weiterarbeiten kann.' },
 ]
 
 const aktiv = ref<'alle' | Kategorie>('alle')
@@ -215,7 +218,6 @@ const sichtbar = computed(() =>
 <style scoped>
 .case-block { margin-bottom: 72px; scroll-margin-top: 90px; }
 .last-case { margin-bottom: 0; padding-bottom: var(--sec-y); }
-#bachelorarbeit { scroll-margin-top: 90px; }
 .case { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: center; }
 .case-text { display: flex; flex-direction: column; gap: 20px; }
 .ext { font-weight: 500; }
@@ -230,40 +232,34 @@ const sichtbar = computed(() =>
 .stage { border-radius: var(--radius-lg); padding: 20px; }
 .stage-note { margin-top: 14px; font-size: 13px; }
 
-/* Bachelorarbeit */
-.band { background: var(--c-lav); padding: var(--sec-y) 0; margin-bottom: 72px; }
-.ba-visuals { display: flex; flex-direction: column; gap: 20px; }
-.panel { background: var(--c-cream); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
-.phases { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+/* Bachelorarbeit – Text-Case-Study */
+.band { background: var(--c-lav); padding: var(--sec-y) 0; margin-bottom: 72px; scroll-margin-top: 90px; }
+.ba-title { margin: 16px 0; max-width: 900px; }
+.ba-lead { max-width: 760px; font-weight: 400; }
+.stats { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.stats li { background: var(--c-cream); border-radius: 16px; padding: 14px 18px; display: flex; align-items: baseline; gap: 10px; }
+.stats b { font-size: 28px; font-weight: 600; line-height: 1; }
+.stats span { font-size: 14px; }
+.cs { margin-top: 40px; }
+.cs-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 28px 0; border-top: 1.5px solid var(--c-ink); }
+.cs-label { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.cs-problem { font-size: 18px; line-height: 1.6; max-width: 820px; }
+.cs-row .text { max-width: 820px; }
+.phases { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .phases li {
-  min-height: 72px; border: 1.5px solid var(--c-ink); border-radius: 10px; padding: 10px;
+  min-height: 72px; border: 1.5px solid var(--c-ink); border-radius: 10px; padding: 8px;
   display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-  font-weight: 600; font-size: 14px; line-height: 1.3; background: var(--c-cream);
+  font-weight: 600; font-size: 13px; line-height: 1.3; background: var(--c-cream);
 }
-.phases li.last { background: var(--c-ink); color: var(--c-cream); }
-.loop { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; }
-.schema { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
-.schema .eyebrow { margin-bottom: 14px; }
-.wf { border: 1.5px solid var(--c-ink); border-radius: 4px; background: var(--c-cream); }
-.wf-row { border-bottom: 1px solid #C9CFCB; padding: 10px 12px; }
-.wf-row:last-child { border-bottom: 0; }
-.wf-top { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; }
-.wf-top i { width: 52px; height: 12px; border-radius: 6px; background: var(--c-ink); }
-.wf-label { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
-.wf-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-.wf-tiles b { height: 34px; background: #E3E6E2; border-radius: 2px; }
-.ln { display: block; height: 8px; background: #E3E6E2; border-radius: 2px; margin-bottom: 6px; }
-.schema-note { margin-top: 10px; font-size: 12px; color: var(--c-ink-2); }
-.lib { display: flex; flex-direction: column; gap: 10px; }
-.lib-row { display: flex; gap: 8px; }
-.pill { height: 30px; flex: 1; border-radius: 15px; border: 1.5px solid var(--c-ink); }
-.pill.dark { background: var(--c-ink); }
-.lib-input { height: 36px; border-radius: 8px; border: 1.5px solid var(--c-ink); display: flex; align-items: center; padding: 0 10px; }
-.sw { width: 30px; height: 30px; border-radius: 8px; }
-.sw.dashed { border: 1.5px dashed var(--c-ink); }
-.tag { padding: 4px 10px; border-radius: 999px; border: 1.2px solid var(--c-ink); font-size: 11px; }
-.tag.grey { border-color: transparent; background: #E3E6E2; }
-.ba-quote { margin-top: 40px; background: var(--c-cream); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+.phases li span { font-size: 12px; font-weight: 500; }
+.phases li.last { background: var(--c-ink); color: var(--c-cream); border-color: var(--c-ink); }
+.loop { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 14px; font-weight: 600; }
+.learn { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.learn-card { background: var(--c-cream); border-radius: 18px; padding: 22px 24px; display: flex; flex-direction: column; gap: 10px; }
+.learn-no { font-size: 13px; font-weight: 600; letter-spacing: .12em; color: var(--c-sage); }
+.learn-title { font-size: 19px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; margin: 0; }
+.learn-text { font-size: 16px; line-height: 1.6; }
+.ba-quote { margin-top: 32px; background: var(--c-cream); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px; }
 .ba-quote blockquote { font-size: 19px; line-height: 1.5; }
 .ba-quote figcaption { margin-top: 12px; font-size: 14px; }
 
@@ -292,6 +288,18 @@ const sichtbar = computed(() =>
 @media (min-width: 900px) {
   .case-block { margin-bottom: 120px; }
   .band { margin-bottom: 120px; }
+  .stats li { padding: 16px 20px; }
+  .stats b { font-size: 30px; }
+  .cs { margin-top: 64px; }
+  .cs-row { grid-template-columns: 200px minmax(0, 1fr); gap: 32px; padding: 40px 0; }
+  .cs-label { padding-top: 6px; }
+  .cs-problem { font-size: 19px; }
+  .phases { grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 26px; }
+  .learn { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .learn-card { padding: 24px 26px; }
+  .learn-title { font-size: 20px; }
+  .ba-quote { margin-top: 48px; padding: 32px 36px; flex-direction: row; gap: 24px; }
+  .ba-quote blockquote { font-size: 21px; }
   .case { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; }
   .case.flip { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
   .case.flip .case-text { order: 2; }
@@ -301,11 +309,6 @@ const sichtbar = computed(() =>
   .nr-phone { position: absolute; left: -28px; bottom: -40px; width: 150px; margin-top: 0; }
   .behind { margin-top: 72px; padding: 28px; }
   .stage { padding: 32px; }
-  .panel { padding: 26px; }
-  .phases { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .schema { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-  .ba-quote { margin-top: 56px; padding: 32px 36px; flex-direction: row; gap: 24px; }
-  .ba-quote blockquote { font-size: 21px; }
   .more-head { margin-bottom: 40px; }
   .filters { width: auto; justify-content: center; flex-wrap: wrap; overflow: visible; padding: 0; }
   .work-body { padding: 22px 24px 26px; }

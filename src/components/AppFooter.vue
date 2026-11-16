@@ -7,7 +7,7 @@
       </RouterLink>
       <p class="footer-copy">© {{ year }} Jasmin Bullinger</p>
       <nav class="footer-nav" aria-label="Rechtliches">
-        <a href="https://www.linkedin.com/in/jasmin-b-416882146" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/jasminbullinger" target="_blank" rel="noopener">LinkedIn</a>
         <RouterLink to="/kontakt">Kontakt</RouterLink>
         <RouterLink to="/impressum">Impressum</RouterLink>
         <RouterLink to="/datenschutz">Datenschutz</RouterLink>

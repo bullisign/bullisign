@@ -41,7 +41,7 @@
         <RouterLink v-for="l in links" :key="l.to" :to="l.to" class="mlink" @click="menuOpen = false">{{ l.label }}</RouterLink>
       </nav>
       <RouterLink to="/kontakt" class="btn btn-dark mmenu-cta" @click="menuOpen = false">Kontakt aufnehmen <span aria-hidden="true">→</span></RouterLink>
-      <p class="mmenu-mail">bullisign@gmail.com · <a href="https://www.linkedin.com/in/jasmin-b-416882146" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p class="mmenu-mail">bullisign@gmail.com · <a href="https://www.linkedin.com/in/jasminbullinger" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </Transition>
 </template>

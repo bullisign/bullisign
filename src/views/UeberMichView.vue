@@ -47,7 +47,7 @@
           </p>
           <div class="btn-row">
             <RouterLink :to="{ path: '/kontakt', query: { thema: 'Bewerbungsunterlagen' } }" class="btn btn-light">Unterlagen anfragen <span aria-hidden="true">→</span></RouterLink>
-            <a href="https://www.linkedin.com/in/jasmin-b-416882146" target="_blank" rel="noopener" class="btn btn-line-light">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/jasminbullinger" target="_blank" rel="noopener" class="btn btn-line-light">LinkedIn</a>
           </div>
         </div>
         <div class="box box-duck">

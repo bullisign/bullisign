@@ -8,7 +8,7 @@
         <p class="lead">Du hast ein Projekt, eine offene Stelle oder einfach eine Frage? Schreib mir ein paar Zeilen. Ich melde mich innerhalb von zwei Werktagen.</p>
         <dl class="anno">
           <dt style="color: var(--c-butter)">E-Mail</dt><dd><a href="mailto:bullisign@gmail.com" class="mail">bullisign@gmail.com</a></dd>
-          <dt style="color: var(--c-butter)">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/jasmin-b-416882146" target="_blank" rel="noopener" class="mail">jasmin-b-416882146</a></dd>
+          <dt style="color: var(--c-butter)">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/jasminbullinger" target="_blank" rel="noopener" class="mail">jasminbullinger</a></dd>
           <dt style="color: var(--c-butter)">Ort</dt><dd>Dettingen unter Teck, Region Stuttgart und remote</dd>
           <dt style="color: var(--c-butter)">Verfügbar</dt><dd>Ab sofort, für Projekte und für eine Festanstellung im UX/UI-Design</dd>
         </dl>
